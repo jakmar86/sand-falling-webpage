@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Sand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <canvas id="sand-canvas"></canvas>
+
+    <div id="menu-container">
+        <div id="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="controls-container">
+            <button id="reset-btn">Reset</button>
+            
+            <div class="control-group">
+                <label for="palette-picker">Color Palette</label>
+                <select id="palette-picker">
+                    <option value="desert">Desert</option>
+                    <option value="beach">Beach</option>
+                    <option value="forest">Forest</option>
+                    <option value="synthwave">Synthwave</option>
+                    <option value="lava">Lava</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="gravity-slider">Fall Speed</label>
+                <input type="range" id="gravity-slider" min="1" max="10" value="2" title="1=Fast, 10=Slow">
+            </div>
+
+            <div class="control-group">
+                <label for="wind-slider">Wind Control</label>
+                <input type="range" id="wind-slider" min="-100" max="100" value="0" title="Left < 0 > Right">
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
