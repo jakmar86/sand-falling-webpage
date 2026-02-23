@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Sand</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Ensuring the BMC button fits the menu style */
+        .bmc-wrap {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+        }
+        .bmc-wrap img {
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-radius: 8px;
+        }
+        .bmc-wrap img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <canvas id="sand-canvas"></canvas>
@@ -20,7 +38,7 @@
             <button id="reset-btn">Reset</button>
             
             <div class="control-group">
-                <label for="palette-picker">Color Palette</label>
+                <label for="palette-picker">Colour Palette</label>
                 <select id="palette-picker">
                     <option value="desert">Desert</option>
                     <option value="beach">Beach</option>
@@ -38,6 +56,14 @@
             <div class="control-group">
                 <label for="wind-slider">Wind Control</label>
                 <input type="range" id="wind-slider" min="-100" max="100" value="0" title="Left < 0 > Right">
+            </div>
+
+            <div class="bmc-wrap">
+                <a href="https://buymeacoffee.com/marklally" target="_blank">
+                    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+                         alt="Buy Me A Coffee" 
+                         style="height: 40px !important; width: 145px !important;">
+                </a>
             </div>
         </div>
     </div>
